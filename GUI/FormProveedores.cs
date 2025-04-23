@@ -14,6 +14,7 @@ using EL;
 //tenia error porque no habia dado de referencias a las capas BLL y EL 
 //tengo un error que es que al darle eliminar me sale 2 veces la opcion y al darle dos veces pues se elimina 2 proveedores 
 // se arreglo el error era que lo tenia accinado 2 veces 
+// reparar el de editar y agregar (se agregan y modifican 2 veces) 
 namespace GUI
 {
     public partial class FormProveedores : Form
