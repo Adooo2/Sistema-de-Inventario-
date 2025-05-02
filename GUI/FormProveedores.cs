@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using BLL;
 using EL;
 //de momento funciona eliminar pero editar y agregar todavia no todavia no he creado el los formularios para hacer dicha accion
-//para la opcion de eliminar no ocupo un formulario porque ya qie spñp se confirma y eso ya lo tengo
-//tenia error porque no habia dado de referencias a las capas BLL y EL 
-//tengo un error que es que al darle eliminar me sale 2 veces la opcion y al darle dos veces pues se elimina 2 proveedores 
-// se arreglo el error era que lo tenia accinado 2 veces 
-// reparar el de editar y agregar (se agregan y modifican 2 veces) 
+//para la opcion de eliminar no ocupo un formulario porque ya que solo se confirma y eso ya lo tengo
+
+
+ 
+
 namespace GUI
 {
     public partial class FormProveedores : Form

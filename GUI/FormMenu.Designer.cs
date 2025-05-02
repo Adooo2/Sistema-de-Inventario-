@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FormDashboard
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             this.panelTotalProveedores = new System.Windows.Forms.Panel();
             this.lblTotalProveedores = new System.Windows.Forms.Label();
             this.lblTituloProveedores = new System.Windows.Forms.Label();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelTotalProductos.SuspendLayout();
             this.panelStockBajo.SuspendLayout();
             this.panelTotalCategorias.SuspendLayout();
@@ -54,9 +55,9 @@
             this.lblTituloDashboard.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloDashboard.Location = new System.Drawing.Point(0, 0);
             this.lblTituloDashboard.Name = "lblTituloDashboard";
-            this.lblTituloDashboard.Size = new System.Drawing.Size(410, 32);
+            this.lblTituloDashboard.Size = new System.Drawing.Size(345, 32);
             this.lblTituloDashboard.TabIndex = 0;
-            this.lblTituloDashboard.Text = "Dashboard - Sistema de Inventario";
+            this.lblTituloDashboard.Text = "Menú- Sistema de Inventario";
             this.lblTituloDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelTotalProductos
@@ -69,7 +70,6 @@
             this.panelTotalProductos.Name = "panelTotalProductos";
             this.panelTotalProductos.Size = new System.Drawing.Size(220, 120);
             this.panelTotalProductos.TabIndex = 1;
-            this.panelTotalProductos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTotalProductos_Paint);
             // 
             // lblTotalProductos
             // 
@@ -184,20 +184,35 @@
             this.lblTituloProveedores.TabIndex = 0;
             this.lblTituloProveedores.Text = "Total Proveedores";
             // 
-            // FormDashboard
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.Red;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(657, 8);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(131, 32);
+            this.btnCerrarSesion.TabIndex = 5;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.panelTotalProveedores);
             this.Controls.Add(this.panelTotalCategorias);
             this.Controls.Add(this.panelStockBajo);
             this.Controls.Add(this.panelTotalProductos);
             this.Controls.Add(this.lblTituloDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormDashboard";
+            this.Name = "FormMenu";
             this.Text = "Dashboard";
-            this.Load += new System.EventHandler(this.FormDashboard_Load);
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panelTotalProductos.ResumeLayout(false);
             this.panelTotalProductos.PerformLayout();
             this.panelStockBajo.ResumeLayout(false);
@@ -226,5 +241,6 @@
         private System.Windows.Forms.Panel panelTotalProveedores;
         private System.Windows.Forms.Label lblTotalProveedores;
         private System.Windows.Forms.Label lblTituloProveedores;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

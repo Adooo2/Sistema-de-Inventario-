@@ -33,7 +33,7 @@ namespace GUI
             try
             {
 
-                AbrirFormEnPanel(new FormDashboard());
+                AbrirFormEnPanel(new FormMenu());
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace GUI
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FormDashboard());
+            AbrirFormEnPanel(new FormMenu());
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace GUI
         }
         private void btnDashboard_Click_1(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FormDashboard());
+            AbrirFormEnPanel(new FormMenu());
         }
 
         private void FormPrincipal_Load_1(object sender, EventArgs e)

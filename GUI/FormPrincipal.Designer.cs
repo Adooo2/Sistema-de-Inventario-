@@ -157,7 +157,7 @@
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(237, 50);
             this.btnDashboard.TabIndex = 1;
-            this.btnDashboard.Text = "Panel";
+            this.btnDashboard.Text = "Menú";
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click_1);
             // 
