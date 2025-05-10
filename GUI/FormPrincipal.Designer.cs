@@ -83,7 +83,7 @@
             // pbLogo
             // 
             this.pbLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Image = global::GUI.Properties.Resources.Logo__2_;
             this.pbLogo.Location = new System.Drawing.Point(0, 25);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(237, 241);
@@ -98,7 +98,7 @@
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.Image = global::GUI.Properties.Resources.icons8_bar_chart_48;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.Location = new System.Drawing.Point(10, 590);
             this.btnReportes.Name = "btnReportes";
@@ -114,7 +114,7 @@
             this.btnSalidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSalidas.ForeColor = System.Drawing.Color.White;
-            this.btnSalidas.Image = ((System.Drawing.Image)(resources.GetObject("btnSalidas.Image")));
+            this.btnSalidas.Image = global::GUI.Properties.Resources.icons8_outbox_tray_48;
             this.btnSalidas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalidas.Location = new System.Drawing.Point(10, 536);
             this.btnSalidas.Name = "btnSalidas";
@@ -130,7 +130,7 @@
             this.btnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnEntradas.ForeColor = System.Drawing.Color.White;
-            this.btnEntradas.Image = ((System.Drawing.Image)(resources.GetObject("btnEntradas.Image")));
+            this.btnEntradas.Image = global::GUI.Properties.Resources.icons8_inbox_tray_48;
             this.btnEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntradas.Location = new System.Drawing.Point(10, 480);
             this.btnEntradas.Name = "btnEntradas";
@@ -146,7 +146,7 @@
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnProveedores.ForeColor = System.Drawing.Color.White;
-            this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
+            this.btnProveedores.Image = global::GUI.Properties.Resources.icons8_truck_48;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.Location = new System.Drawing.Point(10, 424);
             this.btnProveedores.Name = "btnProveedores";
@@ -162,7 +162,7 @@
             this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCategorias.ForeColor = System.Drawing.Color.White;
-            this.btnCategorias.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Image")));
+            this.btnCategorias.Image = global::GUI.Properties.Resources.icons8_tags_40;
             this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategorias.Location = new System.Drawing.Point(10, 374);
             this.btnCategorias.Name = "btnCategorias";
@@ -178,7 +178,7 @@
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
+            this.btnProductos.Image = global::GUI.Properties.Resources.icons8_box_60;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductos.Location = new System.Drawing.Point(5, 318);
             this.btnProductos.Name = "btnProductos";
@@ -194,7 +194,7 @@
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
+            this.btnDashboard.Image = global::GUI.Properties.Resources.icons8_home_48;
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Location = new System.Drawing.Point(10, 262);
             this.btnDashboard.Name = "btnDashboard";
