@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,26 @@ namespace EL
 {
     public class Categoria
     {
-        public int IdCategoria { get; private set; }
+        [Key]
+        public int IdCategoria { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
+        public bool Estado { get; set; } = true;
 
-        public Categoria(int idCategoria, string nombre)
+        // Constructor sin parámetros para Entity Framework
+        public Categoria()
+        {
+            Nombre = string.Empty;
+            Descripcion = string.Empty;
+        }
+
+        // Constructor con parámetros
+        public Categoria(int idCategoria, string nombre, string descripcion)
         {
             IdCategoria = idCategoria;
             Nombre = nombre;
-            Descripcion = string.Empty;
+            Descripcion = descripcion;
+            Estado = true;
         }
     }
-}
+} 

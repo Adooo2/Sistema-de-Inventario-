@@ -9,11 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using EL;
-//de momento funciona eliminar pero editar y agregar todavia no todavia no he creado el los formularios para hacer dicha accion
-//para la opcion de eliminar no ocupo un formulario porque ya que solo se confirma y eso ya lo tengo
 
-
- 
 
 namespace GUI
 {
@@ -21,6 +17,8 @@ namespace GUI
     {
         // esta es una variable para usar la capa BLL
         private readonly ProveedorBLL _proveedorBLL = new ProveedorBLL();
+        // agrego una lista para almacenar todos los proveedores
+        private List<Proveedor> _proveedores;
 
         public FormProveedores()
         {
@@ -33,6 +31,9 @@ namespace GUI
             // preparo la tabla para mostrar datos
             ConfigurarDataGridView();
 
+            // configuro el combo de filtro
+            ConfigurarComboFiltro();
+
             // cargo los datos de proveedores desde la capa BLL
             CargarProveedores();
 
@@ -40,6 +41,17 @@ namespace GUI
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+        }
+
+        private void ConfigurarComboFiltro()
+        {
+            cmbFiltro.Items.Clear();
+            cmbFiltro.Items.Add("Todos los proveedores");
+            cmbFiltro.Items.Add("Por nombre");
+            cmbFiltro.Items.Add("Por teléfono");
+            cmbFiltro.Items.Add("Por email");
+            cmbFiltro.Items.Add("Por dirección");
+            cmbFiltro.SelectedIndex = 0;
         }
 
         private void ConfigurarDataGridView()
@@ -58,13 +70,13 @@ namespace GUI
             try
             {
                 // aca obtengo todos los proveedores usando la capa BLL
-                List<Proveedor> proveedores = _proveedorBLL.ObtenerTodos();
+                _proveedores = _proveedorBLL.ObtenerTodos();
 
                 // con esto se limpia la tabla antes de cargar nuevos datos
                 dgvProveedores.Rows.Clear();
 
                 // agrego cada proveedor a la tabla
-                foreach (var proveedor in proveedores)
+                foreach (var proveedor in _proveedores)
                 {
                     dgvProveedores.Rows.Add(
                         proveedor.Id,
@@ -88,30 +100,17 @@ namespace GUI
         {
             try
             {
-                // nuevo proveedor con datos de ejemplo
-                // estos datos se tomaran en el formulario que haré 
-                Proveedor nuevoProveedor = new Proveedor
+                FormProveedoresDetalle formDetalle = new FormProveedoresDetalle();
+                if (formDetalle.ShowDialog() == DialogResult.OK)
                 {
-                    Nombre = "Nuevo Proveedor",
-                    Telefono = "555-1111",
-                    Email = "nuevo@ejemplo.com",
-                    Direccion = "Dirección de prueba"
-                };
-
-                // uso la capa BLL para insertar el proveedor en la base de datos
-                int id = _proveedorBLL.Insertar(nuevoProveedor);
-
-                // Muestro un mensaje de exito
-                MessageBox.Show("Proveedor agregado con ID: " + id, "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // con esto actualizo la tabla con los datos nuevos
-                CargarProveedores();
+                    // Si el usuario guardó un proveedor, actualizo la tabla
+                    CargarProveedores();
+                }
             }
             catch (Exception ex)
             {
                 // se muestra un mensaje si hay algún error
-                MessageBox.Show("Error al agregar proveedor: " + ex.Message, "Error",
+                MessageBox.Show("Error al abrir formulario: " + ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -129,24 +128,18 @@ namespace GUI
                     // obtengo el proveedor completo usando la capa BLL
                     Proveedor proveedor = _proveedorBLL.ObtenerPorId(id);
 
-                    // simulo un cambio en el nombre
-                    proveedor.Nombre += " (Modificado)";
-
-                    // actualizo el proveedor usando la capa BLL
-                    bool resultado = _proveedorBLL.Actualizar(proveedor);
-
-                    if (resultado)
+                    if (proveedor != null)
                     {
-                        // Muestro mensaje de éxito
-                        MessageBox.Show("Proveedor actualizado correctamente", "Éxito",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Actualizo la tabla
-                        CargarProveedores();
+                        FormProveedoresDetalle formDetalle = new FormProveedoresDetalle(proveedor);
+                        if (formDetalle.ShowDialog() == DialogResult.OK)
+                        {
+                            // Actualizo la tabla
+                            CargarProveedores();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo actualizar el proveedor", "Error",
+                        MessageBox.Show("No se encontró el proveedor seleccionado", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -219,50 +212,91 @@ namespace GUI
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            // Obtengo el texto de búsqueda
-            string filtro = txtBuscar.Text.Trim().ToLower();
-
-            // Solo busco si hay al menos 3 letras
-            if (filtro.Length >= 3)
-            {
-                try
-                {
-                    // se busca proveedores que coincidan usando la capa BLL
-                    List<Proveedor> proveedoresFiltrados = _proveedorBLL.BuscarPorNombre(filtro);
-
-                    // para limpiar la tabla
-                    dgvProveedores.Rows.Clear();
-
-                    // agrego los proveedores encontrados
-                    foreach (var proveedor in proveedoresFiltrados)
-                    {
-                        dgvProveedores.Rows.Add(
-                            proveedor.Id,
-                            proveedor.Nombre,
-                            "", //aca no hay conecto en proveedor 
-                            proveedor.Telefono,
-                            proveedor.Email,
-                            proveedor.Direccion
-                        );
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // se muestra yb mensaje si hay error
-                    MessageBox.Show("Error al buscar proveedores: " + ex.Message, "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else if (filtro.Length == 0)
-            {
-                // si se borró todo el texto cargo todos los proveedores
-                CargarProveedores();
-            }
+            // ahora llamo al método para filtrar proveedores
+            FiltrarProveedores();
         }
 
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //se usará más adelante para filtrar por diferentes campos
+            // cuando cambia el filtro, actualizo la lista
+            FiltrarProveedores();
+        }
+
+        private void FiltrarProveedores()
+        {
+            try
+            {
+                // Obtengo el texto de búsqueda
+                string filtro = txtBuscar.Text.Trim().ToLower();
+                string filtroSeleccionado = cmbFiltro.SelectedItem?.ToString() ?? "Todos los proveedores";
+
+                // para limpiar la tabla
+                dgvProveedores.Rows.Clear();
+
+                // si no hay proveedores cargados, los cargo
+                if (_proveedores == null || _proveedores.Count == 0)
+                {
+                    _proveedores = _proveedorBLL.ObtenerTodos();
+                }
+
+                // empiezo con todos los proveedores
+                var proveedoresFiltrados = _proveedores;
+
+                // solo aplico filtro si hay texto
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    // filtro según el criterio seleccionado
+                    switch (filtroSeleccionado)
+                    {
+                        case "Por nombre":
+                            proveedoresFiltrados = proveedoresFiltrados.Where(p =>
+                                (p.Nombre?.ToLower() ?? "").Contains(filtro)).ToList();
+                            break;
+
+                        case "Por teléfono":
+                            proveedoresFiltrados = proveedoresFiltrados.Where(p =>
+                                (p.Telefono?.ToLower() ?? "").Contains(filtro)).ToList();
+                            break;
+
+                        case "Por email":
+                            proveedoresFiltrados = proveedoresFiltrados.Where(p =>
+                                (p.Email?.ToLower() ?? "").Contains(filtro)).ToList();
+                            break;
+
+                        case "Por dirección":
+                            proveedoresFiltrados = proveedoresFiltrados.Where(p =>
+                                (p.Direccion?.ToLower() ?? "").Contains(filtro)).ToList();
+                            break;
+
+                        default: // "Todos los proveedores"
+                            proveedoresFiltrados = proveedoresFiltrados.Where(p =>
+                                (p.Nombre?.ToLower() ?? "").Contains(filtro) ||
+                                (p.Telefono?.ToLower() ?? "").Contains(filtro) ||
+                                (p.Email?.ToLower() ?? "").Contains(filtro) ||
+                                (p.Direccion?.ToLower() ?? "").Contains(filtro)).ToList();
+                            break;
+                    }
+                }
+
+                // agrego los proveedores filtrados a la tabla
+                foreach (var proveedor in proveedoresFiltrados)
+                {
+                    dgvProveedores.Rows.Add(
+                        proveedor.Id,
+                        proveedor.Nombre,
+                        "", //aca no hay conecto en proveedor 
+                        proveedor.Telefono,
+                        proveedor.Email,
+                        proveedor.Direccion
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                // se muestra un mensaje si hay error
+                MessageBox.Show("Error al filtrar proveedores: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)

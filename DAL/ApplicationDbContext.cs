@@ -18,8 +18,14 @@ namespace DAL
 
         public DbSet<Producto> Productos { get; set; }
 
+        public DbSet<Categoria> Categorias { get; set; }
 
-        // Configuración adicional si es necesaria
+        public DbSet<EntradaInventario> EntradasInventario { get; set; }
+
+        public DbSet<SalidaInventario> SalidasInventario { get; set; }
+
+
+        // Configuración adicional
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

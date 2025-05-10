@@ -41,11 +41,18 @@
             this.panelTotalProveedores = new System.Windows.Forms.Panel();
             this.lblTotalProveedores = new System.Windows.Forms.Label();
             this.lblTituloProveedores = new System.Windows.Forms.Label();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.lblIngresosHoy = new System.Windows.Forms.Label();
+            this.lblGastosHoy = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblIngresos = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblGastos = new System.Windows.Forms.Label();
             this.panelTotalProductos.SuspendLayout();
             this.panelStockBajo.SuspendLayout();
             this.panelTotalCategorias.SuspendLayout();
             this.panelTotalProveedores.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTituloDashboard
@@ -97,7 +104,7 @@
             this.panelStockBajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelStockBajo.Controls.Add(this.lblStockBajo);
             this.panelStockBajo.Controls.Add(this.lblTituloStockBajo);
-            this.panelStockBajo.Location = new System.Drawing.Point(260, 70);
+            this.panelStockBajo.Location = new System.Drawing.Point(246, 70);
             this.panelStockBajo.Name = "panelStockBajo";
             this.panelStockBajo.Size = new System.Drawing.Size(220, 120);
             this.panelStockBajo.TabIndex = 2;
@@ -128,7 +135,7 @@
             this.panelTotalCategorias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTotalCategorias.Controls.Add(this.lblTotalCategorias);
             this.panelTotalCategorias.Controls.Add(this.lblTituloCategorias);
-            this.panelTotalCategorias.Location = new System.Drawing.Point(20, 210);
+            this.panelTotalCategorias.Location = new System.Drawing.Point(20, 209);
             this.panelTotalCategorias.Name = "panelTotalCategorias";
             this.panelTotalCategorias.Size = new System.Drawing.Size(220, 120);
             this.panelTotalCategorias.TabIndex = 3;
@@ -159,7 +166,7 @@
             this.panelTotalProveedores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTotalProveedores.Controls.Add(this.lblTotalProveedores);
             this.panelTotalProveedores.Controls.Add(this.lblTituloProveedores);
-            this.panelTotalProveedores.Location = new System.Drawing.Point(260, 210);
+            this.panelTotalProveedores.Location = new System.Drawing.Point(472, 70);
             this.panelTotalProveedores.Name = "panelTotalProveedores";
             this.panelTotalProveedores.Size = new System.Drawing.Size(220, 120);
             this.panelTotalProveedores.TabIndex = 4;
@@ -184,26 +191,75 @@
             this.lblTituloProveedores.TabIndex = 0;
             this.lblTituloProveedores.Text = "Total Proveedores";
             // 
-            // btnCerrarSesion
+            // lblIngresosHoy
             // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.Red;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(657, 8);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(131, 32);
-            this.btnCerrarSesion.TabIndex = 5;
-            this.btnCerrarSesion.Text = "Cerrar Sesión";
-            this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            this.lblIngresosHoy.AutoSize = true;
+            this.lblIngresosHoy.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresosHoy.Location = new System.Drawing.Point(7, 51);
+            this.lblIngresosHoy.Name = "lblIngresosHoy";
+            this.lblIngresosHoy.Size = new System.Drawing.Size(38, 45);
+            this.lblIngresosHoy.TabIndex = 6;
+            this.lblIngresosHoy.Text = "0";
+            this.lblIngresosHoy.Click += new System.EventHandler(this.lblIngresosHoy_Click);
+            // 
+            // lblGastosHoy
+            // 
+            this.lblGastosHoy.AutoSize = true;
+            this.lblGastosHoy.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGastosHoy.Location = new System.Drawing.Point(6, 51);
+            this.lblGastosHoy.Name = "lblGastosHoy";
+            this.lblGastosHoy.Size = new System.Drawing.Size(38, 45);
+            this.lblGastosHoy.TabIndex = 7;
+            this.lblGastosHoy.Text = "0";
+            this.lblGastosHoy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.lblIngresos);
+            this.panel1.Controls.Add(this.lblIngresosHoy);
+            this.panel1.Location = new System.Drawing.Point(246, 209);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(220, 120);
+            this.panel1.TabIndex = 8;
+            // 
+            // lblIngresos
+            // 
+            this.lblIngresos.AutoSize = true;
+            this.lblIngresos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresos.Location = new System.Drawing.Point(10, 10);
+            this.lblIngresos.Name = "lblIngresos";
+            this.lblIngresos.Size = new System.Drawing.Size(142, 20);
+            this.lblIngresos.TabIndex = 7;
+            this.lblIngresos.Text = "Total Ingresos hoy ";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Controls.Add(this.lblGastos);
+            this.panel2.Controls.Add(this.lblGastosHoy);
+            this.panel2.Location = new System.Drawing.Point(472, 209);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(220, 120);
+            this.panel2.TabIndex = 9;
+            // 
+            // lblGastos
+            // 
+            this.lblGastos.AutoSize = true;
+            this.lblGastos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGastos.Location = new System.Drawing.Point(10, 10);
+            this.lblGastos.Name = "lblGastos";
+            this.lblGastos.Size = new System.Drawing.Size(130, 20);
+            this.lblGastos.TabIndex = 8;
+            this.lblGastos.Text = "Total Gastos hoy ";
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCerrarSesion);
+            this.ClientSize = new System.Drawing.Size(1225, 566);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTotalProveedores);
             this.Controls.Add(this.panelTotalCategorias);
             this.Controls.Add(this.panelStockBajo);
@@ -221,6 +277,10 @@
             this.panelTotalCategorias.PerformLayout();
             this.panelTotalProveedores.ResumeLayout(false);
             this.panelTotalProveedores.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +301,11 @@
         private System.Windows.Forms.Panel panelTotalProveedores;
         private System.Windows.Forms.Label lblTotalProveedores;
         private System.Windows.Forms.Label lblTituloProveedores;
-        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Label lblIngresosHoy;
+        private System.Windows.Forms.Label lblGastosHoy;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblIngresos;
+        private System.Windows.Forms.Label lblGastos;
     }
 }

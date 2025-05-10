@@ -66,6 +66,24 @@
     <Compile Include="FormCategorias.Designer.cs">
       <DependentUpon>FormCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCategoriasDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategoriasDetalle.Designer.cs">
+      <DependentUpon>FormCategoriasDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEntradas.Designer.cs">
+      <DependentUpon>FormEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEntradasDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEntradasDetalle.Designer.cs">
+      <DependentUpon>FormEntradasDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,16 +108,55 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProductosDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductosDetalle.Designer.cs">
+      <DependentUpon>FormProductosDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProveedores.Designer.cs">
       <DependentUpon>FormProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProveedoresDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProveedoresDetalle.Designer.cs">
+      <DependentUpon>FormProveedoresDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes.Designer.cs">
+      <DependentUpon>FormReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalidas.Designer.cs">
+      <DependentUpon>FormSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSalidasDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalidasDetalle.Designer.cs">
+      <DependentUpon>FormSalidasDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCategorias.resx">
       <DependentUpon>FormCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategoriasDetalle.resx">
+      <DependentUpon>FormCategoriasDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEntradas.resx">
+      <DependentUpon>FormEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEntradasDetalle.resx">
+      <DependentUpon>FormEntradasDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
@@ -113,8 +170,23 @@
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProductosDetalle.resx">
+      <DependentUpon>FormProductosDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProveedores.resx">
       <DependentUpon>FormProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProveedoresDetalle.resx">
+      <DependentUpon>FormProveedoresDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes.resx">
+      <DependentUpon>FormReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSalidas.resx">
+      <DependentUpon>FormSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSalidasDetalle.resx">
+      <DependentUpon>FormSalidasDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

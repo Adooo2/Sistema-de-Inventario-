@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,6 @@ namespace GUI
 {
     public partial class FormPrincipal : Form
     {
-       
-
         private Form formActivo = null;
 
         public FormPrincipal()
@@ -24,7 +23,6 @@ namespace GUI
 
         private void PersonalizarDiseno()
         {
-
             this.Text = "Sistema de Inventario - Tienda de Abarrotes";
         }
 
@@ -32,7 +30,6 @@ namespace GUI
         {
             try
             {
-
                 AbrirFormEnPanel(new FormMenu());
             }
             catch (Exception ex)
@@ -44,24 +41,20 @@ namespace GUI
 
         private void AbrirFormEnPanel(Form formHijo)
         {
-
             if (formActivo != null)
                 formActivo.Close();
-
 
             formActivo = formHijo;
             formHijo.TopLevel = false;
             formHijo.FormBorderStyle = FormBorderStyle.None;
             formHijo.Dock = DockStyle.Fill;
 
-
             panelContenido.Controls.Add(formHijo);
             panelContenido.Tag = formHijo;
             formHijo.BringToFront();
             formHijo.Show();
         }
-
-
+        // esto es cuando le dan click 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new FormMenu());
@@ -70,7 +63,6 @@ namespace GUI
         private void btnProductos_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new FormProductos());
-
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
@@ -80,53 +72,50 @@ namespace GUI
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            {
-                // Abrimos el formulario de proveedores dentro del panel principal
-                AbrirFormEnPanel(new FormProveedores());
-            }
-
+            AbrirFormEnPanel(new FormProveedores());
         }
 
         private void btnEntradas_Click(object sender, EventArgs e)
         {
-            // esto muestra temporalmente  un mensaje en lugar de abrir el formulario
-            MessageBox.Show("Módulo de Entradas en desarrollo", "Información",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            AbrirFormEnPanel(new FormEntradas());
         }
 
         private void btnSalidas_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Módulo de Salidas en desarrollo", "Información",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            AbrirFormEnPanel(new FormSalidas());
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Módulo de Reportes en desarrollo", "Información",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            AbrirFormEnPanel(new FormReportes());
         }
+
         private void panelContenido_Paint(object sender, PaintEventArgs e)
         {
-
-        }
-        private void btnDashboard_Click_1(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(new FormMenu());
+            
         }
 
-        private void FormPrincipal_Load_1(object sender, EventArgs e)
+        private void pbLogo_Click(object sender, EventArgs e)
         {
-
+           
         }
-
-        private void btnProveedores_Click_1(object sender, EventArgs e)
+            private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FormProveedores());
+            // Pregunto al usuario si está seguro de cerrar sesión
+            if (MessageBox.Show("¿Estás seguro que deseas cerrar sesión?",
+                              "Confirmar",
+                              MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FormLogin login = new FormLogin();
+                // Muestro el login
+                login.Show();
+                // Cierro el formulario actual
+                this.Hide();
+                // Agrego un manejador para detectar cuando se cierre el formulario de login
+                login.FormClosed += (s, args) => this.Close();
+            }
         }
     }
+    
 }

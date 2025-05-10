@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace GUI
 {
     public partial class FormLogin : Form
@@ -17,18 +16,14 @@ namespace GUI
         {
             InitializeComponent();
         }
-
         private void lblTitulo_Click(object sender, EventArgs e)
         {
-
         }
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             // Ocultar mensaje de error 
             if (lblError != null)
                 lblError.Visible = false;
-
             // validar campos
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
@@ -40,7 +35,6 @@ namespace GUI
                 txtEmail.Focus();
                 return;
             }
-
             if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 if (lblError != null)
@@ -51,16 +45,13 @@ namespace GUI
                 txtPassword.Focus();
                 return;
             }
-
             try
             {
-               
+
                 if (txtEmail.Text == "admin" && txtPassword.Text == "admin123")
                 {
-                    // Aquí después se establecería el usuario actual
-                    // Program.UsuarioActual = usuario;
-
-                    // Cerrar el formulario con resultado OK
+                    // 
+                    
                     DialogResult = DialogResult.OK;
                     Close();
                 }

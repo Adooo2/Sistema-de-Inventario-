@@ -52,10 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="CategoriasDAl.cs" />
+    <Compile Include="EntradaInventarioDAL.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="ProductosDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorDAL.cs" />
+    <Compile Include="SalidaInventarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
