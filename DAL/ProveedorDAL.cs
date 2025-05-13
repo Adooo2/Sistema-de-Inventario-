@@ -48,8 +48,7 @@ namespace DAL
             var proveedor = _context.Proveedores.Find(id);
             if (proveedor != null)
             {
-                // Eliminación lógica
-                proveedor.Estado = false;
+                _context.Proveedores.Remove(proveedor);
                 return _context.SaveChanges() > 0;
             }
             return false;

@@ -41,7 +41,7 @@ namespace DAL
             {
                 try
                 {
-                    /
+                    
                     _context.EntradasInventario.Add(entrada);
 
                     // Actualizar el stock del producto si se solicita
@@ -132,8 +132,8 @@ namespace DAL
                                 throw new Exception("La eliminación de esta entrada dejaría el stock negativo.");
                         }
 
-                        // Marcar como eliminada 
-                        entrada.Estado = false;
+                        // Eliminación física
+                        _context.EntradasInventario.Remove(entrada);
 
                         // Guardar cambios
                         bool resultado = _context.SaveChanges() > 0;

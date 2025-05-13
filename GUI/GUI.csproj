@@ -148,6 +148,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCategorias.resx">
       <DependentUpon>FormCategorias.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCategoriasDetalle.resx">
       <DependentUpon>FormCategoriasDetalle.cs</DependentUpon>
@@ -166,6 +167,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
@@ -258,6 +260,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-salt-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-roll-of-paper-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-coffee-bag-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-beet-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bleach-bottle-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-soap-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-coca-cola-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bread-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-egg-carton-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-kawaii-milk-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sunflower-oil-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rice-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\azucar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-beans-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

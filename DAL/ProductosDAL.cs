@@ -73,7 +73,7 @@ namespace DAL
             var producto = _context.Productos.Find(id);
             if (producto != null)
             {
-                producto.Estado = false;
+                _context.Productos.Remove(producto);
                 return _context.SaveChanges() > 0;
             }
             return false;

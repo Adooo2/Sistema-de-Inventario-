@@ -78,7 +78,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 561);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -317,7 +317,7 @@
             this.dgvReporte.Location = new System.Drawing.Point(3, 259);
             this.dgvReporte.Name = "dgvReporte";
             this.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReporte.Size = new System.Drawing.Size(878, 274);
+            this.dgvReporte.Size = new System.Drawing.Size(878, 258);
             this.dgvReporte.TabIndex = 2;
             // 
             // lblTituloReporte
@@ -338,11 +338,11 @@
             this.lblResumen.AutoSize = true;
             this.lblResumen.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblResumen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblResumen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResumen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResumen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblResumen.Location = new System.Drawing.Point(3, 536);
+            this.lblResumen.Location = new System.Drawing.Point(3, 520);
             this.lblResumen.Name = "lblResumen";
-            this.lblResumen.Size = new System.Drawing.Size(878, 25);
+            this.lblResumen.Size = new System.Drawing.Size(878, 41);
             this.lblResumen.TabIndex = 5;
             this.lblResumen.Text = "Total: 0 productos | Valor total: $0.00";
             this.lblResumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

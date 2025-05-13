@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.PanelSubtituto = new System.Windows.Forms.Panel();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -40,13 +39,15 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.chkRecordarme = new System.Windows.Forms.CheckBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panelHeader.Controls.Add(this.PanelSubtituto);
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(36)))), ((int)(((byte)(99)))));
+            this.panelHeader.Controls.Add(this.pictureBox1);
             this.panelHeader.Controls.Add(this.lblSubtitulo);
             this.panelHeader.Controls.Add(this.lblTitulo);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -55,37 +56,26 @@
             this.panelHeader.Size = new System.Drawing.Size(384, 150);
             this.panelHeader.TabIndex = 0;
             // 
-            // PanelSubtituto
-            // 
-            this.PanelSubtituto.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.PanelSubtituto.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelSubtituto.Location = new System.Drawing.Point(0, 120);
-            this.PanelSubtituto.Name = "PanelSubtituto";
-            this.PanelSubtituto.Size = new System.Drawing.Size(384, 30);
-            this.PanelSubtituto.TabIndex = 2;
-            // 
             // lblSubtitulo
             // 
-            this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(36)))), ((int)(((byte)(99)))));
+            this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSubtitulo.Location = new System.Drawing.Point(113, 77);
+            this.lblSubtitulo.Location = new System.Drawing.Point(80, 110);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(149, 21);
+            this.lblSubtitulo.Size = new System.Drawing.Size(211, 30);
             this.lblSubtitulo.TabIndex = 1;
-            this.lblSubtitulo.Text = "Tienda de Abarrotes";
-            this.lblSubtitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSubtitulo.Text = "Iniciar Sesión ";
+            this.lblSubtitulo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblTitulo
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(262, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(384, 32);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Sistema de Inventario";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -133,7 +123,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnIngresar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,6 +173,17 @@
             this.lblError.Text = "Email o contraseña incorrectos";
             this.lblError.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.Logo__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(384, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,7 +205,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login-Sistema de inventario ";
             this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,7 +216,6 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Panel PanelSubtituto;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblPassword;
@@ -224,5 +224,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox chkRecordarme;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

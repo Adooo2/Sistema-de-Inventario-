@@ -178,10 +178,10 @@
             // 
             // lblBuscar
             // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(100, 41);
+            this.lblBuscar.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(89, 41);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(40, 13);
+            this.lblBuscar.Size = new System.Drawing.Size(51, 25);
             this.lblBuscar.TabIndex = 2;
             this.lblBuscar.Text = "Buscar";
             this.lblBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

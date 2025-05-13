@@ -301,7 +301,7 @@ namespace GUI
 
         private void dgvProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Esto se usará despues para las acciones al hacer clic en celdas
+            
         }
     }
 }

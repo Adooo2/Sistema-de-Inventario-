@@ -71,14 +71,24 @@ namespace DAL
                 var categoria = _context.Categorias.Find(id);
                 if (categoria != null)
                 {
-                    categoria.Estado = false;
+                    // Verificar si hay productos usando esta categoría
+                    bool tieneProductos = _context.Productos
+                        .Any(p => p.CategoriaId == id && p.Estado);
+
+                    if (tieneProductos)
+                    {
+                        throw new Exception("No se puede eliminar la categoría porque tiene productos asociados.");
+                    }
+
+                    // Eliminación física
+                    _context.Categorias.Remove(categoria);
                     return _context.SaveChanges() > 0;
                 }
                 return false;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

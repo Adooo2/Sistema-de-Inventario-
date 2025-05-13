@@ -31,9 +31,9 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelControles = new System.Windows.Forms.Panel();
+            this.lblBuscar = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lblBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -76,9 +76,9 @@
             // 
             // panelControles
             // 
+            this.panelControles.Controls.Add(this.lblBuscar);
             this.panelControles.Controls.Add(this.cmbCategoria);
             this.panelControles.Controls.Add(this.txtBuscar);
-            this.panelControles.Controls.Add(this.lblBuscar);
             this.panelControles.Controls.Add(this.btnEliminar);
             this.panelControles.Controls.Add(this.btnEditar);
             this.panelControles.Controls.Add(this.btnAgregar);
@@ -88,10 +88,20 @@
             this.panelControles.Size = new System.Drawing.Size(800, 100);
             this.panelControles.TabIndex = 1;
             // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(450, 43);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(47, 15);
+            this.lblBuscar.TabIndex = 6;
+            this.lblBuscar.Text = "Buscar";
+            // 
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(656, 40);
+            this.cmbCategoria.Location = new System.Drawing.Point(647, 40);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(150, 21);
             this.cmbCategoria.TabIndex = 5;
@@ -99,19 +109,10 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(514, 41);
+            this.txtBuscar.Location = new System.Drawing.Point(503, 41);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(136, 20);
             this.txtBuscar.TabIndex = 4;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.Location = new System.Drawing.Point(433, 40);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(75, 23);
-            this.lblBuscar.TabIndex = 3;
-            this.lblBuscar.Text = "Buscar";
-            this.lblBuscar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
@@ -125,7 +126,6 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -138,7 +138,6 @@
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -151,7 +150,6 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvProductos
             // 
@@ -253,7 +251,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button lblBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.DataGridView dgvProductos;
@@ -265,5 +262,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colstock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
+        private System.Windows.Forms.Label lblBuscar;
     }
 }

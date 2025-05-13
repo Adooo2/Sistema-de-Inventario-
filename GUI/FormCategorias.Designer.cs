@@ -109,7 +109,6 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -124,7 +123,7 @@
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            
             // 
             // btnEliminar
             // 
@@ -139,7 +138,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            
             // 
             // panelBuscar
             // 
@@ -163,11 +162,11 @@
             // 
             this.label1Buscar.AutoSize = true;
             this.label1Buscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1Buscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1Buscar.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1Buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1Buscar.Location = new System.Drawing.Point(0, 0);
             this.label1Buscar.Name = "label1Buscar";
-            this.label1Buscar.Size = new System.Drawing.Size(42, 15);
+            this.label1Buscar.Size = new System.Drawing.Size(47, 15);
             this.label1Buscar.TabIndex = 0;
             this.label1Buscar.Text = "Buscar";
             // 

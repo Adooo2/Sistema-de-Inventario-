@@ -136,7 +136,7 @@ namespace DAL
                         }
 
                         // Marcar como eliminada 
-                        salida.Estado = false;
+                        _context.SalidasInventario.Remove(salida);
 
                         // Guardar cambios
                         bool resultado = _context.SaveChanges() > 0;
